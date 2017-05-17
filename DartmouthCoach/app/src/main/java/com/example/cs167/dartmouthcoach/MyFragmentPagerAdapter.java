@@ -45,19 +45,19 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position) {
             case 0:
-                myDrawable = context.getResources().getDrawable(R.drawable.map);
+                myDrawable = context.getResources().getDrawable(R.drawable.tickets);
                 title = "Tickets";
                 break;
             case 1:
-                myDrawable = context.getResources().getDrawable(R.drawable.likes);
+                myDrawable = context.getResources().getDrawable(R.drawable.schedules);
                 title = "Schedule";
                 break;
             case 2:
-                myDrawable = context.getResources().getDrawable(R.drawable.post);
+                myDrawable = context.getResources().getDrawable(R.drawable.discounts);
                 title = "Discount";
                 break;
             case 3:
-                myDrawable = context.getResources().getDrawable(R.drawable.book);
+                myDrawable = context.getResources().getDrawable(R.drawable.notices);
                 title = "Notices";
                 break;
             case 4:
