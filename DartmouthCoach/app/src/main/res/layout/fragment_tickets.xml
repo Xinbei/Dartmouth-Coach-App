@@ -20,7 +20,7 @@
         android:layout_marginBottom="15dp">
 
         <RadioGroup
-            android:id="@+id/radioGroup1"
+            android:id="@+id/radioGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -28,7 +28,7 @@
             android:orientation="horizontal" >
 
             <RadioButton
-                android:id="@+id/radioAndroid"
+                android:id="@+id/one_way"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -40,7 +40,7 @@
                 android:text="One-way"
                 android:textColor="@drawable/selector_text_color" />
             <RadioButton
-                android:id="@+id/radioiPhone"
+                android:id="@+id/round_trip"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

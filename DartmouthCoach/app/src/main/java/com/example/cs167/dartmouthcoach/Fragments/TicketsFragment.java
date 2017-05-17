@@ -10,9 +10,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import com.example.cs167.dartmouthcoach.LocationAdapter;
+import com.example.cs167.dartmouthcoach.Model.Order;
 import com.example.cs167.dartmouthcoach.R;
 
 import java.util.ArrayList;
@@ -29,6 +31,7 @@ import static com.example.cs167.dartmouthcoach.R.id.spinner2;
  */
 
 public class TicketsFragment extends Fragment{
+    private Order order;
 
     private Calendar mDateAndTime = Calendar.getInstance();
 
@@ -36,6 +39,8 @@ public class TicketsFragment extends Fragment{
     private List<String> dest;
     Spinner departure, destination, adults, children;
     Button leaveDate, returnDate;
+    RadioGroup radioGroup;
+
 
     private Date leaveDateObject;
     private Date returnDateObject;
@@ -58,6 +63,9 @@ public class TicketsFragment extends Fragment{
         children = (Spinner) rootView.findViewById(R.id.children);
         leaveDate = (Button) rootView.findViewById(R.id.leave_date);
         returnDate = (Button) rootView.findViewById(R.id.return_date);
+        radioGroup = (RadioGroup) rootView.findViewById(R.id.radioGroup);
+
+        order = new Order();
 
         //ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
           //      R.array.location_array, android.R.layout.simple_spinner_item);
@@ -76,6 +84,8 @@ public class TicketsFragment extends Fragment{
         destination.setAdapter(destAdapter);
         adults.setAdapter(adapter2);
         children.setAdapter(adapter3);
+
+
 
         departure.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -150,12 +160,6 @@ public class TicketsFragment extends Fragment{
 
         return rootView;
     }
-
-
-
-
-
-
 
 
 }
