@@ -17,4 +17,32 @@
     <string name="radio_female">Female</string>
     <string name="radio_none">None</string>
 
+    <string-array name="location_array">
+        <item>Hanover,NH/ Dartmouth College</item>
+        <item>Lebanon, NH</item>
+        <item>New London, NH</item>
+        <item>Boston/ Logan Airport, MA</item>
+        <item>Boston/ Logan Airport, MA</item>
+        <item>New York - 150 E 42nd St., NY</item>
+
+    </string-array>
+
+    <string-array name="adult_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+
+    <string-array name="children_array">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
 </resources>
