@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.example.cs167.dartmouthcoach.MyPreferenceCategory
+        android:title="User Information">
+        <PreferenceScreen
+            android:key="personal_information"
+            android:title="User's profile"
+            android:summary="Name, Email, password, etc">
+            <intent
+                android:action="android.inten.action.UserProfile"/>
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:key="order_history"
+            android:title="Order History"
+            android:summary="View your previous orders">
+            <intent
+                android:action="android.intent.action.DisplayOrderHistory"/>
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:key="edit_passengers"
+            android:title="Edit Passengers"
+            android:summary="Change the information of saved passengers"/>
+    </com.example.cs167.dartmouthcoach.MyPreferenceCategory>
+
+    <com.example.cs167.dartmouthcoach.MyPreferenceCategory
+        android:title="Payment Settings">
+        <PreferenceScreen
+            android:key="payment_settings"
+            android:title="Credit card"
+            android:summary="Change your credit card information">
+            <intent
+                android:action="android.intent.action.EditPaymentInfo"/>
+        </PreferenceScreen>
+    </com.example.cs167.dartmouthcoach.MyPreferenceCategory>
+
+    <com.example.cs167.dartmouthcoach.MyPreferenceCategory
+        android:title="App Settings">
+        <CheckBoxPreference
+            android:key="notifications"
+            android:title="Notifications"
+            android:summary="Turn off notification alerts"/>
+        <CheckBoxPreference
+            android:key="privacy_setting"
+            android:title="Privacy Setting"
+            android:summary="Save your information anonymously"/>
+        <PreferenceScreen
+            android:key="about"
+            android:title="About"
+            android:summary="Some information about this App">
+        </PreferenceScreen>
+    </com.example.cs167.dartmouthcoach.MyPreferenceCategory>
+
+</PreferenceScreen>
