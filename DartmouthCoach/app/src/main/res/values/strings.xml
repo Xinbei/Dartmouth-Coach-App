@@ -18,6 +18,7 @@
     <string name="radio_none">None</string>
 
     <string-array name="location_array">
+
         <item>---Select a station---</item>
         <item>Hanover, NH/ Dartmouth College</item>
         <item>Lebanon, NH</item>

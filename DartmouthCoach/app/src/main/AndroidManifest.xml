@@ -45,6 +45,12 @@
         <activity android:name=".Authen.LoginActivity" />
 
         <activity android:name=".CreateAccountActivity"></activity>
+
+        <activity android:name=".UserProfile"></activity>
+
+        <activity android:name=".DisplayOrderHistory"></activity>
+
+        <activity android:name=".EditPaymentInfo"></activity>
     </application>
 
 </manifest>

@@ -17,6 +17,7 @@ import com.example.cs167.dartmouthcoach.LocationAdapter;
 import com.example.cs167.dartmouthcoach.Model.Order;
 import com.example.cs167.dartmouthcoach.R;
 
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -36,6 +37,7 @@ public class TicketsFragment extends Fragment{
     private Calendar mDateAndTime = Calendar.getInstance();
 
     private View rootView;
+
     private List<String> dest;
     Spinner departure, destination, adults, children;
     Button leaveDate, returnDate;
@@ -61,6 +63,7 @@ public class TicketsFragment extends Fragment{
         destination = (Spinner) rootView.findViewById(spinner2);
         adults = (Spinner) rootView.findViewById(R.id.adults);
         children = (Spinner) rootView.findViewById(R.id.children);
+
         leaveDate = (Button) rootView.findViewById(R.id.leave_date);
         returnDate = (Button) rootView.findViewById(R.id.return_date);
         radioGroup = (RadioGroup) rootView.findViewById(R.id.radioGroup);
@@ -158,6 +161,8 @@ public class TicketsFragment extends Fragment{
             }
         });
 
+        adults.setAdapter(adapter2);
+        children.setAdapter(adapter3);
         return rootView;
     }
 
