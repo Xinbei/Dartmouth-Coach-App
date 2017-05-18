@@ -3,6 +3,9 @@ package com.example.cs167.dartmouthcoach.Model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.example.cs167.dartmouthcoach.Global;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -13,9 +16,10 @@ import java.util.List;
 
 public class Order implements Parcelable {
     private Date date;
+    private Date returnDate;
     private int departure, destination;
     private int adults, children;
-    private int route;
+    private int route,route2;
     private List<String> firstname, lastname;
     private int bags, price;
     private int ticketNum;
@@ -24,6 +28,17 @@ public class Order implements Parcelable {
     public Order(){
         firstname = new ArrayList<>();
         lastname = new ArrayList<>();
+        adults = 1;
+        children = 0;
+        roundtrip = false;
+    }
+
+    public Date getReturnDate() {
+        return returnDate;
+    }
+
+    public void setReturnDate(Date returnDate) {
+        this.returnDate = returnDate;
     }
 
     public Date getDate() {
@@ -122,7 +137,44 @@ public class Order implements Parcelable {
         this.roundtrip = roundtrip;
     }
 
+    public String getDeptAndDest(){
+        String s = "";
+        s += Global.LOCATION_LIST[departure];
+        if(roundtrip){
+            s+=" <-> ";
+        }else{
+            s+=" -> ";
+        }
+        s += Global.LOCATION_LIST[destination];
+        return s;
+    }
+
+    public String getSummaryForRoute(){
+        String s = "";
+
+        SimpleDateFormat format = new SimpleDateFormat("EEE MM/dd/yyyy");
+        if(date!=null)
+            s += format.format(date);
+        if(roundtrip){
+            s += " - ";
+            if(returnDate != null)
+                s += format.format(returnDate);
+        }
+        s += "\n";
+        s += adults + " Adults, "+children + " Children";
+        return s;
+    }
+
+    public int getRoute2() {
+        return route2;
+    }
+
+    public void setRoute2(int route2) {
+        this.route2 = route2;
+    }
+
     @Override
+
     public int describeContents() {
         return 0;
     }
@@ -130,11 +182,13 @@ public class Order implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeLong(this.date != null ? this.date.getTime() : -1);
+        dest.writeLong(this.returnDate != null ? this.returnDate.getTime() : -1);
         dest.writeInt(this.departure);
         dest.writeInt(this.destination);
         dest.writeInt(this.adults);
         dest.writeInt(this.children);
         dest.writeInt(this.route);
+        dest.writeInt(this.route2);
         dest.writeStringList(this.firstname);
         dest.writeStringList(this.lastname);
         dest.writeInt(this.bags);
@@ -146,11 +200,14 @@ public class Order implements Parcelable {
     protected Order(Parcel in) {
         long tmpDate = in.readLong();
         this.date = tmpDate == -1 ? null : new Date(tmpDate);
+        long tmpReturnDate = in.readLong();
+        this.returnDate = tmpReturnDate == -1 ? null : new Date(tmpReturnDate);
         this.departure = in.readInt();
         this.destination = in.readInt();
         this.adults = in.readInt();
         this.children = in.readInt();
         this.route = in.readInt();
+        this.route2 = in.readInt();
         this.firstname = in.createStringArrayList();
         this.lastname = in.createStringArrayList();
         this.bags = in.readInt();

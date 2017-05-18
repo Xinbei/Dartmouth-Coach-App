@@ -44,6 +44,8 @@
 
         <activity android:name=".Authen.LoginActivity" />
 
+        <activity android:name=".RouteChooseActivity" />
+
         <activity android:name=".CreateAccountActivity"></activity>
 
         <activity android:name=".UserProfile"></activity>
