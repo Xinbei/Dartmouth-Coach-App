@@ -18,10 +18,12 @@
     <string name="radio_none">None</string>
 
     <string-array name="location_array">
-        <item>Hanover,NH/ Dartmouth College</item>
+
+        <item>---Select a station---</item>
+        <item>Hanover, NH/ Dartmouth College</item>
         <item>Lebanon, NH</item>
         <item>New London, NH</item>
-        <item>Boston/ Logan Airport, MA</item>
+        <item>Boston/ South Station, MA</item>
         <item>Boston/ Logan Airport, MA</item>
         <item>New York - 150 E 42nd St., NY</item>
 
