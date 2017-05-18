@@ -42,15 +42,45 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Authen.LoginActivity" />
+        <activity android:name=".Authen.LoginActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.LoginActivity"/>
 
-        <activity android:name=".CreateAccountActivity"></activity>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
 
-        <activity android:name=".UserProfile"></activity>
+        <activity android:name=".CreateAccountActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.CreateAccountActivity"/>
 
-        <activity android:name=".DisplayOrderHistory"></activity>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
 
-        <activity android:name=".EditPaymentInfo"></activity>
+        <activity android:name=".UserProfile">
+            <intent-filter>
+                <action android:name="android.intent.action.UserProfile"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".DisplayOrderHistory">
+            <intent-filter>
+                <action android:name="android.intent.action.DisplayOrderHistory"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".EditPaymentInfo">
+            <intent-filter>
+                <action android:name="android.intent.action.EditPaymentInfo"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

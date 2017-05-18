@@ -9,12 +9,12 @@
         android:layout_height="500dp">
 
         <LinearLayout
-            android:layout_height="500dp"
+            android:layout_height="400dp"
             android:layout_width="match_parent"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/notice_title"
+                android:id="@+id/dialog_title"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2"
@@ -26,11 +26,10 @@
                 android:background="@color/color2"/>
 
             <TextView
-                android:id="@+id/notice_details"
+                android:id="@+id/dialog_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:gravity="center"
                 android:padding="8dp" />
 
             </LinearLayout>
@@ -40,13 +39,24 @@
         android:layout_below="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:gravity="center|bottom">
 
         <Button
             android:id="@+id/btn_ok"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="0.5"
             android:text="OK"
+            android:background="@color/color2"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:id="@+id/btn_purchase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="BUY TICKETS"
             android:background="@color/color2"
             android:textColor="@color/white"/>
 
