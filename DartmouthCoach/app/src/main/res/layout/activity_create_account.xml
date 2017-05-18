@@ -140,6 +140,7 @@
             android:background="@color/color1"
             android:onClick="onNewAcc"
             android:textAllCaps="false"
+            android:textSize="20dp"
             android:textColor="@color/white"
             android:text="CREATE" />
 
