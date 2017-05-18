@@ -13,6 +13,8 @@ import com.example.cs167.dartmouthcoach.Model.Route;
 
 import java.util.List;
 
+import static com.example.cs167.dartmouthcoach.R.id.route;
+
 /**
  * Created by apple on 2017/5/17.
  */
@@ -20,7 +22,6 @@ import java.util.List;
 public class RouteAdapter extends ArrayAdapter<Route> {
 
     List<Route> routes;
-    int route = -1;
 
     public RouteAdapter(@NonNull Context context,@NonNull List<Route> objects) {
         super(context, R.layout.list_item_route, objects);
@@ -37,13 +38,7 @@ public class RouteAdapter extends ArrayAdapter<Route> {
         return routes.get(i);
     }
 
-    public int getRoute(){
-        return route;
-    }
 
-    public void setRoute(int i){
-        route = i;
-    }
 
     public View getView(int position, View convertView, ViewGroup parent){
 
@@ -52,14 +47,14 @@ public class RouteAdapter extends ArrayAdapter<Route> {
 
         final RouteAdapter.ViewHolder viewHolder;
 
-        if(convertView == null || route == position){
+        if(convertView == null){
             viewHolder = new RouteAdapter.ViewHolder();
             LayoutInflater inflater = ((Activity) getContext()).getLayoutInflater();
             convertView = inflater.inflate(R.layout.list_item_route, parent, false);
 
             //binding view parts to view holder
             viewHolder.time = (TextView) convertView.findViewById(R.id.time);
-            viewHolder.route = (TextView) convertView.findViewById(R.id.route);
+            viewHolder.route = (TextView) convertView.findViewById(route);
             viewHolder.ava = (TextView) convertView.findViewById(R.id.ava);
 
             convertView.setTag(viewHolder);

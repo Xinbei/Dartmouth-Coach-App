@@ -1,6 +1,6 @@
 package com.example.cs167.dartmouthcoach;
 
-import android.graphics.Color;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -36,41 +36,52 @@ public class RouteChooseActivity extends AppCompatActivity {
         }
         timeTitle = (TextView) findViewById(R.id.time_title);
         summary = (TextView) findViewById(R.id.summary);
-        timeTitle.setText(order.getDeptAndDest());
+        timeTitle.setText(order.getDeptToDest());
         summary.setText(order.getSummaryForRoute());
 
         routeLeave = (ListView) findViewById(R.id.list_route_leave);
+        routeReturn = (ListView) findViewById(R.id.list_route_return);
+        routeReturn.setVisibility(View.INVISIBLE);
         final RouteAdapter adapter = new RouteAdapter(this, Global.BOSTON_SERVICE_SOUTHBOUND);
+        final RouteAdapter adapter2 = new RouteAdapter(this, Global.BOSTON_SERVICE_NORTHBOUND);
         routeLeave.setAdapter(adapter);
         routeLeave.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                if(adapter.getRoute() < 0){
-                    adapter.setRoute(i);
-                    view.setBackgroundColor(getResources().getColor(R.color.color1));
+                    /*view.setBackgroundColor(getResources().getColor(R.color.color1));
                     TextView t = (TextView)view.findViewById(R.id.time);
                     t.setTextColor(Color.WHITE);
                     t = (TextView)view.findViewById(R.id.route);
                     t.setTextColor(Color.WHITE);
                     t = (TextView)view.findViewById(R.id.ava);
-                    t.setTextColor(Color.WHITE);
+                    t.setTextColor(Color.WHITE);*/
+                order.setRoute(i+1);
+                if(order.isRoundtrip()){
+                    adapterView.setVisibility(View.GONE);
+                    routeReturn.setAdapter(adapter2);
+                    routeReturn.setVisibility(View.VISIBLE);
+                    timeTitle.setText(order.getDestToDept());
                 }else{
-                    adapter.notifyDataSetChanged();
-                    adapter.setRoute(i);
-                    view.setBackgroundColor(getResources().getColor(R.color.color1));
-                    TextView t = (TextView)view.findViewById(R.id.time);
-                    t.setTextColor(Color.WHITE);
-                    t = (TextView)view.findViewById(R.id.route);
-                    t.setTextColor(Color.WHITE);
-                    t = (TextView)view.findViewById(R.id.ava);
-                    t.setTextColor(Color.WHITE);
-
+                    toPassengerInfoPage();
                 }
 
             }
         });
+        routeReturn.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                order.setRoute2(i+1);
+                toPassengerInfoPage();
+            }
+        });
 
+    }
 
-
+    public void toPassengerInfoPage(){
+        Intent intent = new Intent(this, PassengerInfoActivity.class);
+        Bundle b = new Bundle();
+        b.putParcelable("order", order);
+        intent.putExtras(b);
+        startActivity(intent);
     }
 }

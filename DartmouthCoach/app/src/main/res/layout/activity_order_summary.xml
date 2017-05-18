@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/activity_horizontal_margin"
+    tools:context="com.example.cs167.dartmouthcoach.OrderSummaryActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:background="@drawable/rectangle_with_shadow">
+        <TextView
+            android:id="@+id/summary"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:textSize="20sp"
+            android:text="test"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"/>
+
+        <LinearLayout
+            android:layout_below="@+id/summary"
+            android:id="@+id/passenger_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:text="Name"
+                android:gravity="center_horizontal"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:text="Bus fare"
+                android:gravity="center_horizontal"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_below="@id/passenger_header"
+            android:id="@+id/passenger_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/name_list"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:gravity="center_horizontal"
+                android:text="Alice In Wonder\nTom"/>
+            <TextView
+                android:id="@+id/price_list"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:gravity="center_horizontal"
+                android:text="$52\n$33"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_below="@id/passenger_list"
+            android:id="@+id/bag_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Checked Bags: "
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_below="@id/bag_num"
+            android:id="@+id/bag_fare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bags Fare: "
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:textSize="20sp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_below="@id/bag_fare"
+            android:id="@+id/total_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Amount: "
+            android:layout_centerHorizontal="true"
+            android:textSize="30sp"/>
+
+
+    </RelativeLayout>
+
+
+
+    <Button
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/color1"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="80dp"
+        android:paddingRight="80dp"
+        android:text="Proceed to Pay"
+
+        />
+
+</RelativeLayout>

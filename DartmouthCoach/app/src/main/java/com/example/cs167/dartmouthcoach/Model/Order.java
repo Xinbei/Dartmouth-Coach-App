@@ -149,6 +149,22 @@ public class Order implements Parcelable {
         return s;
     }
 
+    public String getDeptToDest(){
+        String s = "";
+        s += Global.LOCATION_LIST[departure];
+        s+=" -> ";
+        s += Global.LOCATION_LIST[destination];
+        return s;
+    }
+
+    public String getDestToDept(){
+        String s = "";
+        s += Global.LOCATION_LIST[destination];
+        s+=" -> ";
+        s += Global.LOCATION_LIST[departure];
+        return s;
+    }
+
     public String getSummaryForRoute(){
         String s = "";
 
@@ -159,6 +175,29 @@ public class Order implements Parcelable {
             s += " - ";
             if(returnDate != null)
                 s += format.format(returnDate);
+        }
+        s += "\n";
+        s += adults + " Adults, "+children + " Children";
+        return s;
+    }
+
+    public String getFinalSummary(){
+        String s = "";
+
+        SimpleDateFormat format = new SimpleDateFormat("EEE MM/dd/yyyy");
+        if(date!=null)
+            s += format.format(date);
+        if(roundtrip){
+            s += " - ";
+            if(returnDate != null)
+                s += format.format(returnDate);
+        }
+        s += "\n";
+        s += Global.BOSTON_SERVICE_SOUTHBOUND.get(route).getTimeString();
+        if(roundtrip){
+            s += " - ";
+            if(returnDate != null)
+                s += Global.BOSTON_SERVICE_NORTHBOUND.get(route).getTimeString();
         }
         s += "\n";
         s += adults + " Adults, "+children + " Children";
