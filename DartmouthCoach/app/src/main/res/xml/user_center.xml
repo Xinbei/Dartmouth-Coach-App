@@ -15,7 +15,7 @@
             android:title="Order History"
             android:summary="View your previous orders">
             <intent
-                android:action="android.intent.action.DisplayOrderHistory"/>
+                android:action="android.intent.action.OrderHistoryActivity"/>
         </PreferenceScreen>
         <PreferenceScreen
             android:key="edit_passengers"
