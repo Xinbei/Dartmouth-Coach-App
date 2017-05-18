@@ -67,14 +67,8 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-
-
-
-  
-
        
         <activity android:name=".RouteChooseActivity" />
-        <activity android:name=".CreateAccountActivity" />
         <activity android:name=".PassengerInfoActivity" />
         <activity android:name=".OrderSummaryActivity" />
         <activity android:name=".PaymentInfoActivity" />

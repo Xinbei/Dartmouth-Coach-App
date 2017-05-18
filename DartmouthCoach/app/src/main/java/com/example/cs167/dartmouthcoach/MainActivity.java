@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.design.widget.TabLayout;
@@ -16,7 +17,9 @@ import android.view.Menu;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
+import com.example.cs167.dartmouthcoach.Authen.LoginActivity;
 import com.example.cs167.dartmouthcoach.Fragments.DiscountFragment;
+import com.example.cs167.dartmouthcoach.Fragments.LoginFragment;
 import com.example.cs167.dartmouthcoach.Fragments.NoticesFragment;
 import com.example.cs167.dartmouthcoach.Fragments.ScheduleFragment;
 import com.example.cs167.dartmouthcoach.Fragments.TicketsFragment;
@@ -39,11 +42,23 @@ public class MainActivity extends AppCompatActivity {
     private DiscountFragment discountFragment;
     private NoticesFragment noticesFragment;
     private UserFragment userFragment;
+    private LoginFragment loginFragment;
+
+    public String loginMethod = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        loginMethod = getIntent().getStringExtra(Global.LOGIN_METHOD_KEY);
+
+        if(loginMethod == null){
+            Intent intent = new Intent(this, LoginActivity.class);
+            intent.putExtra(Global.LOGIN_METHOD_KEY, loginMethod);
+            startActivity(intent);
+            finish();
+        }
 
         // check user permissions
         checkPermission(this);
@@ -58,13 +73,17 @@ public class MainActivity extends AppCompatActivity {
         discountFragment = new DiscountFragment();
         noticesFragment = new NoticesFragment();
         userFragment = new UserFragment();
+        loginFragment = new LoginFragment();
 
         fragments = new ArrayList<Fragment>();
         fragments.add(ticketsFragment);
         fragments.add(scheduleFragment);
         fragments.add(discountFragment);
         fragments.add(noticesFragment);
-        fragments.add(userFragment);
+        if(loginMethod != null && loginMethod.equals(Global.EMAIL_LOGIN)){
+            fragments.add(userFragment);
+        }else
+            fragments.add(loginFragment);
 
         myFragmentPagerAdapter = new MyFragmentPagerAdapter(getFragmentManager(), fragments, this);
         viewPager = (ViewPager) findViewById(R.id.viewpager);

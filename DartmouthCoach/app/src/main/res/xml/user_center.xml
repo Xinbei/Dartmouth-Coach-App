@@ -36,11 +36,11 @@
 
     <com.example.cs167.dartmouthcoach.MyPreferenceCategory
         android:title="App Settings">
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="notifications"
             android:title="Notifications"
             android:summary="Turn off notification alerts"/>
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="privacy_setting"
             android:title="Privacy Setting"
             android:summary="Save your information anonymously"/>

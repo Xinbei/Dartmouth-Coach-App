@@ -23,9 +23,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:background="@color/white"
-            android:onClick="onSwitch"
             android:text="@string/button_sign_in"
-            android:backgroundTint="@color/color4"
+            android:backgroundTint="@color/color1"
             android:textColor="@color/white"
             android:textAllCaps="false" />
 

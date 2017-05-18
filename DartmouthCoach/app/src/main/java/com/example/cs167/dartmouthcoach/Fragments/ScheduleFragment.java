@@ -33,6 +33,8 @@ public class ScheduleFragment extends Fragment {
         final LinearLayout boston_schedue = (LinearLayout) rootView.findViewById(R.id.boston_schedule);
         final LinearLayout nyc_schedule = (LinearLayout) rootView.findViewById(R.id.nyc_schedule);
 
+        nyc_schedule.setVisibility(View.GONE);
+
         RadioGroup radioGroup = (RadioGroup) rootView.findViewById(R.id.radioGroup);
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.cs167.dartmouthcoach.Global;
 import com.example.cs167.dartmouthcoach.R;
 
 /**
@@ -20,6 +21,7 @@ public class UserFragment extends PreferenceFragment {
         super.onCreate(saveInstanceState);
 
         addPreferencesFromResource(R.xml.user_center);
+
     }
 
 }
