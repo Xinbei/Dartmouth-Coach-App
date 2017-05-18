@@ -2,7 +2,9 @@ package com.example.cs167.dartmouthcoach.Fragments;
 
 import android.app.DatePickerDialog;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +18,7 @@ import android.widget.Spinner;
 import com.example.cs167.dartmouthcoach.LocationAdapter;
 import com.example.cs167.dartmouthcoach.Model.Order;
 import com.example.cs167.dartmouthcoach.R;
-
+import com.example.cs167.dartmouthcoach.RouteChooseActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,9 +41,11 @@ public class TicketsFragment extends Fragment{
     private View rootView;
 
     private List<String> dest;
-    Spinner departure, destination, adults, children;
-    Button leaveDate, returnDate;
-    RadioGroup radioGroup;
+    private Spinner departure, destination, adults, children;
+    private Button leaveDate, returnDate;
+    private RadioGroup radioGroup;
+    private Button search;
+    boolean ifRoundTrip = false;
 
 
     private Date leaveDateObject;
@@ -66,12 +70,13 @@ public class TicketsFragment extends Fragment{
 
         leaveDate = (Button) rootView.findViewById(R.id.leave_date);
         returnDate = (Button) rootView.findViewById(R.id.return_date);
+        search = (Button) rootView.findViewById(R.id.search);
         radioGroup = (RadioGroup) rootView.findViewById(R.id.radioGroup);
+
 
         order = new Order();
 
-        //ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
-          //      R.array.location_array, android.R.layout.simple_spinner_item);
+
         final LocationAdapter srcAdapter = new LocationAdapter(getActivity(),
                 android.R.layout.simple_spinner_item, dest);
         final LocationAdapter destAdapter = new LocationAdapter(getActivity(),
@@ -83,20 +88,31 @@ public class TicketsFragment extends Fragment{
                 R.array.children_array, android.R.layout.simple_spinner_item);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
+
         departure.setAdapter(srcAdapter);
         destination.setAdapter(destAdapter);
         adults.setAdapter(adapter2);
         children.setAdapter(adapter3);
 
-
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if(i == R.id.one_way){
+                    order.setRoundtrip(false);
+                }else if(i == R.id.round_trip){
+                    order.setRoundtrip(true);
+                }
+            }
+        });
 
         departure.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 destAdapter.resetEnabledList();
+                order.setDeparture(i);
                 switch (i){
-                    case 0: break;
-                    case 1: destAdapter.disableItem(1); break;
+                    case 0:break;
+                    case 1:destAdapter.disableItem(1); break;
                     case 2: destAdapter.disableItem(2); break;
                     case 3: destAdapter.disableItem(6); destAdapter.disableItem(3); break;
                     case 4: destAdapter.disableItem(6); destAdapter.disableItem(4); break;
@@ -119,6 +135,17 @@ public class TicketsFragment extends Fragment{
             }
         });
 
+        destination.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                order.setDestination(i);
+                // TODO: add logic of preventing error route
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+
         leaveDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -131,6 +158,7 @@ public class TicketsFragment extends Fragment{
                                 mDateAndTime.set(year, monthOfYear, dayOfMonth);
                                 leaveDateObject = mDateAndTime.getTime();
                                 leaveDate.setText(String.format("%d/%d/%d", monthOfYear+1,dayOfMonth,year));
+                                order.setDate(leaveDateObject);
                             }
                         },
                         mDateAndTime.get(Calendar.YEAR),
@@ -151,6 +179,7 @@ public class TicketsFragment extends Fragment{
                                                   int year, int monthOfYear, int dayOfMonth) {
                                 mDateAndTime.set(year, monthOfYear, dayOfMonth);
                                 returnDateObject = mDateAndTime.getTime();
+                                order.setReturnDate(returnDateObject);
                                 returnDate.setText(String.format("%d/%d/%d", monthOfYear+1,dayOfMonth, year));
                             }
                         },
@@ -162,7 +191,37 @@ public class TicketsFragment extends Fragment{
         });
 
         adults.setAdapter(adapter2);
+        adults.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                order.setAdults(i+1);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
         children.setAdapter(adapter3);
+        children.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                order.setChildren(i);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), RouteChooseActivity.class);
+                Bundle b = new Bundle();
+                b.putParcelable("order", order);
+                intent.putExtras(b);
+                startActivity(intent);
+            }
+        });
+
         return rootView;
     }
 
