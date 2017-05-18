@@ -74,6 +74,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
+                    android:textStyle="bold"
                     android:text="Upper Valley"/>
 
                 <ImageView
@@ -86,6 +87,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textSize="15dp"
+                    android:textStyle="bold"
                     android:text="Boston South Station &amp; Logan Airport"/>
 
             </LinearLayout>
@@ -408,6 +410,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
+                    android:textStyle="bold"
                     android:text="South Station &amp; Logan Airport"/>
 
                 <ImageView
@@ -420,6 +423,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textSize="15dp"
+                    android:textStyle="bold"
                     android:text="Upper Valley"/>
 
             </LinearLayout>
@@ -482,6 +486,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
+                    android:textStyle="bold"
                     android:text="New York City"/>
 
                 <ImageView
@@ -494,6 +499,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textSize="15dp"
+                    android:textStyle="bold"
                     android:text="Upper Valley"/>
 
             </LinearLayout>
