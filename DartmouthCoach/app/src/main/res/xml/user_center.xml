@@ -8,7 +8,7 @@
             android:title="User's profile"
             android:summary="Name, Email, password, etc">
             <intent
-                android:action="android.inten.action.UserProfile"/>
+                android:action="android.intent.action.UserProfile"/>
         </PreferenceScreen>
         <PreferenceScreen
             android:key="order_history"

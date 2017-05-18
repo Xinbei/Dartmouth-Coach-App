@@ -3,4 +3,15 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="text_view_padding">8dp</dimen>
+
+    <dimen name="col_width1">72dp</dimen>
+    <dimen name="col_width2">70dp</dimen>
+    <dimen name="col_width3">80dp</dimen>
+
+    <dimen name="col_width4">140dp</dimen>
+    <dimen name="col_width5">120dp</dimen>
+
+    <dimen name="col_height1">52dp</dimen>
+    <dimen name="col_height2">40dp</dimen>
+    <dimen name="col_height3">20dp</dimen>
 </resources>

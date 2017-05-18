@@ -12,15 +12,17 @@ public class User implements Parcelable {
     private String userId;
     private String userName;
     private String userEmail;
+    private String userPassword;
     private String userPhoNum;
     private CreditCard userPayment;
     private int userGender;
 
     public User(){}
 
-    public User(String userName, String userEmail, String userPhoNum, CreditCard userPayment, int userGender){
+    public User(String userName, String userEmail, String userPassword, String userPhoNum, CreditCard userPayment, int userGender){
         this.userName = userName;
         this.userEmail = userEmail;
+        this.userPassword = userPassword;
         this.userPhoNum = userPhoNum;
         this.userPayment = userPayment;
         this.userGender = userGender;
@@ -37,6 +39,10 @@ public class User implements Parcelable {
     public String getUserEmail(){return userEmail;}
 
     public void setUserEmail(String userEmail){this.userEmail = userEmail;}
+
+    public String getUserPassword(){return userPassword;}
+
+    public void setUserPassword(String userPassword){this.userPassword = userPassword;}
 
     public String getUserPhoNum(){return userPhoNum;}
 
@@ -60,6 +66,7 @@ public class User implements Parcelable {
         dest.writeString(this.userId);
         dest.writeString(this.userName);
         dest.writeString(this.userEmail);
+        dest.writeString(this.userPassword);
         dest.writeString(this.userPhoNum);
         dest.writeParcelable(this.userPayment, flags);
         dest.writeInt(this.userGender);
@@ -69,12 +76,13 @@ public class User implements Parcelable {
         this.userId = in.readString();
         this.userName = in.readString();
         this.userEmail = in.readString();
+        this.userPassword = in.readString();
         this.userPhoNum = in.readString();
         this.userPayment = in.readParcelable(CreditCard.class.getClassLoader());
         this.userGender = in.readInt();
     }
 
-    public static final Parcelable.Creator<User> CREATOR = new Parcelable.Creator<User>() {
+    public static final Creator<User> CREATOR = new Creator<User>() {
         @Override
         public User createFromParcel(Parcel source) {
             return new User(source);

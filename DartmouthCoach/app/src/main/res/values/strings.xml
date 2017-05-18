@@ -47,4 +47,174 @@
         <item>4</item>
     </string-array>
 
+    <string name="discount_sdrt_content">
+        Visit Boston for the day with a same-day round-trip ticket!\n\n
+        Check out Dartmouth Coach’s special fare to Boston South Station:
+        Child: $25 Lebanon/Hanover to Boston South Station
+        Adult: $47 Lebanon/Hanover to Boston South Station\n\n
+        Some restrictions apply: Same-day round-trip tickets MUST be purchased in person at the terminal on the day of travel.
+        There are no black-out dates; you can travel on any day, including holidays.
+        No reservations are accepted. In order to ensure yourself a seat, arrive 30 minutes before bus departure.
+        A photo ID must be shown at the time of purchase. Call our Information Center at 1-800-637-0123 for more details.
+    </string>
+
+    <string name="discount_commuter_content">
+        Travel to Boston South Station or Logan Airport frequently?\n\n
+        Consider a 10 Ride Commuter Pass. A Commuter Pass contains ten (10) one-way tickets good for 60 days from date of purchase.
+        Purchase the Commuter Pass in Lebanon, NH or Boston South Station.
+        The Commuter Pass is intended for one traveler only whose name is imprinted on the ticket at the time of purchase.
+        The Commuter Pass cannot be purchased for a group or multiple commuters, and is non-transferrable.
+        A valid ID must be presented with ticket at time of boarding. For more information regarding these fares, call 1-800-637-0213.
+    </string>
+
+    <string name="discount_children">
+        Children ride free on our Boston/Logan service!*\n\n
+        Boston/Logan Service\n
+        *One (1) child up to the age 14 will ride free (space permitting) on our Boston/Logan service per full paying adult ticket (one-way and roundtrip) from all Dartmouth Coach locations.
+        Any additional children pay the published child’s rate*.\n\n
+        New York City Service\n
+        One (1) child up to the age 15 will ride for 1/2 of the adult fare per full paying adult ticket (one-way and round-trip). Any additional
+        children pay the full published adult rate.  Children under 16 are not permitted to travel alone.
+    </string>
+
+    <string-array name="boston_north_row1">
+        <item>LEAVES BOSTON LOGAN INTERNATIONAL AIRPORT</item>
+        <item>LEAVES BOSTON SOUTH STATION</item>
+        <item>ARRIVES NEW LONDON, NH</item>
+        <item>ARRIVES LEBANON, NH</item>
+        <item>ARRIVES HANOVER, NH / DARTMOUTH COLLEGE</item>
+    </string-array>
+
+    <string-array name="boston_north_row2">
+        <item>8:55 AM</item>
+        <item>9:30 AM</item>
+        <item>11:15 AM</item>
+        <item>11:45 AM</item>
+        <item>12:00 PM</item>
+    </string-array>
+
+    <string-array name="boston_north_row3">
+        <item>10:55 AM</item>
+        <item>11:30 AM</item>
+        <item>1:15 PM</item>
+        <item>1:45 PM</item>
+        <item>2:00 PM</item>
+    </string-array>
+
+    <string-array name="boston_north_row4">
+        <item>12:55 PM</item>
+        <item>1:30 PM</item>
+        <item>3:15 PM</item>
+        <item>3:45 PM</item>
+        <item>4:00 PM</item>
+    </string-array>
+
+    <string-array name="boston_north_row5">
+        <item>2:55 PM</item>
+        <item>3:30 PM</item>
+        <item>5:15 PM</item>
+        <item>5:45 PM</item>
+        <item>6:00 PM</item>
+    </string-array>
+
+    <string-array name="boston_north_row6">
+        <item>3:55 PM</item>
+        <item>4:30 PM</item>
+        <item>6:15 PM</item>
+        <item>6:45 PM</item>
+        <item>7:00 PM</item>
+    </string-array>
+
+    <string-array name="boston_north_row7">
+        <item>4:55 PM</item>
+        <item>5:30 PM</item>
+        <item>7:15 PM</item>
+        <item>7:45 PM</item>
+        <item>8:00 PM</item>
+    </string-array>
+
+    <string-array name="boston_north_row8">
+        <item>5:55 PM</item>
+        <item>6:30 PM</item>
+        <item>8:15 PM</item>
+        <item>8:45 PM</item>
+        <item>9:00 PM</item>
+    </string-array>
+
+    <string-array name="boston_north_row9">
+        <item>6:55 PM</item>
+        <item>7:30 PM</item>
+        <item>9:15 PM</item>
+        <item>9:45 PM</item>
+        <item>10:00 PM</item>
+    </string-array>
+
+    <string-array name="boston_north_row10">
+        <item>8:55 PM</item>
+        <item>9:30 PM</item>
+        <item>11:15 PM</item>
+        <item>11:45 PM</item>
+        <item>12:00 AM</item>
+    </string-array>
+
+    <string-array name="nyc_south_row1">
+        <item>LEAVES LEBANON, NH</item>
+        <item>LEAVES HANOVER, NH/DARTMOUTH COLLEGE</item>
+        <item>ARRIVES NEW YORK CITY</item>
+    </string-array>
+
+    <string-array name="nyc_south_row2">
+        <item>6:15 AM DAILY</item>
+        <item>6:30 AM DAILY</item>
+        <item>11:30 AM DAILY</item>
+    </string-array>
+
+    <string-array name="nyc_south_row3">
+        <item>9:15 AM (ONLY ON WEEKENDS)</item>
+        <item>9:30 AM (ONLY ON WEEKENDS)</item>
+        <item>2:45 PM (ONLY ON WEEKENDS)</item>
+    </string-array>
+
+    <string-array name="nyc_south_row4">
+        <item>2:15 PM (MONDAY - FRIDAY)</item>
+        <item>2:30 PM (MONDAY - FRIDAY)</item>
+        <item>7:30 PM (MONDAY - FRIDAY)</item>
+    </string-array>
+
+    <string-array name="nyc_south_row5">
+        <item>3:15 PM (SUNDAYS ONLY)</item>
+        <item>3:30 PM (SUNDAYS ONLY)</item>
+        <item>8:30 PM (SUNDAYS ONLY)</item>
+    </string-array>
+
+    <string-array name="nyc_north_row1">
+        <item>LEAVES NEW YORK CITY</item>
+        <item>ARRIVES HANOVER, NH/DARTMOUTH COLLEGE</item>
+        <item>ARRIVES LEBANON, NH</item>
+    </string-array>
+
+    <string-array name="nyc_north_row2">
+        <item>8:30 AM (everyday EXCEPT Sundays)</item>
+        <item>1:15 PM (everyday EXCEPT Sundays)</item>
+        <item>1:30 PM (everyday EXCEPT Sundays)</item>
+    </string-array>
+
+    <string-array name="nyc_north_row3">
+        <item>10:30 AM (SUNDAYS ONLY)</item>
+        <item>3:15 PM (SUNDAYS ONLY)</item>
+        <item>3:30 PM (SUNDAYS ONLY)</item>
+    </string-array>
+
+    <string-array name="nyc_north_row4">
+        <item>1:30 PM DAILY</item>
+        <item>6:20 PM DAILY</item>
+        <item>6:35 PM DAILY</item>
+    </string-array>
+
+    <string-array name="nyc_north_row5">
+        <item>4:30 PM (FRIDAY and SUNDAY ONLY)</item>
+        <item>9:15 PM (FRIDAY and SUNDAY ONLY)</item>
+        <item>9:30 PM (FRIDAY and SUNDAY ONLY)</item>
+    </string-array>
+
 </resources>

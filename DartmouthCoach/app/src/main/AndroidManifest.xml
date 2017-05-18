@@ -42,15 +42,45 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Authen.LoginActivity" />
+
+
+        <activity android:name=".Authen.LoginActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.LoginActivity"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".CreateAccountActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.CreateAccountActivity"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".UserProfile">
+            <intent-filter>
+                <action android:name="android.intent.action.UserProfile"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+
+
+  
+
+       
         <activity android:name=".RouteChooseActivity" />
         <activity android:name=".CreateAccountActivity" />
-        <activity android:name=".UserProfile" />
         <activity android:name=".PassengerInfoActivity" />
         <activity android:name=".OrderSummaryActivity" />
         <activity android:name=".PaymentInfoActivity" />
         <activity android:name=".ConfirmationActivity" />
         <activity android:name=".OrderHistoryActivity"></activity>
+
     </application>
 
 </manifest>
