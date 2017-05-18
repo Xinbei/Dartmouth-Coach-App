@@ -1,12 +1,510 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    android:paddingTop="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_horizontal_margin">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/radio"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="schedule"
-        android:textSize="20dp"/>
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp">
+
+        <RadioGroup
+
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <RadioButton
+
+                android:id="@+id/boston"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Boston"
+                android:textColor="@drawable/selector_text_color" />
+            <RadioButton
+
+                android:id="@+id/new_york"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="New York City"
+                android:textColor="@drawable/selector_text_color" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/boston_schedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:text="Upper Valley"/>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:src="@drawable/next"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="15dp"
+                    android:text="Boston South Station &amp; Logan Airport"/>
+
+            </LinearLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="72dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:textSize="10dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/color1"
+                        android:text="LEAVES HANOVER, NH/DARTMOUTH COLLEGE"/>
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:textSize="10dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/color1"
+                        android:text="LEAVES LEBANON, NH"/>
+
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:textSize="10dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/color1"
+                        android:text="LEAVES NEW LONDON, NH"/>
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:textSize="10dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/color1"
+                        android:text="ARRIVES BOSTON SOUTH STATION"/>
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:textSize="10dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/color1"
+                        android:text="ARRIVES BOSTON LOGAN INTERNATIONAL AIRPORT"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="5:00 AM"/>
+
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="5:20 AM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="5:50 AM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="7:50 AM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="8:05 AM"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="7:00 AM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="7:20 AM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="7:50 AM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="9:35 AM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="9:50 AM"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="9:00 AM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="9:20 AM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="9:50 AM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="11:35 AM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="11:50 AM"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="11:00 AM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="11:20 AM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="11:50 AM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="1:35 PM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="1:50 PM"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="12:00 AM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="12:20 AM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="12:50 AM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="2:35 PM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="2:50 PM"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="1:00 PM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="1:20 PM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="1:50 PM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="3:35 PM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="3:50 PM"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="2:00 PM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="2:20 PM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="--"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="4:35 PM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="4:50 PM"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="3:00 PM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="3:20 PM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="3:50 PM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="5:35 PM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="5:50 PM"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="5:00 PM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="5:20 PM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="5:50 PM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="7:35 PM"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center"
+                        android:text="7:50 PM"/>
+                </TableRow>
+
+            </TableLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:text="South Station &amp; Logan Airport"/>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:src="@drawable/next"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="15dp"
+                    android:text="Upper Valley"/>
+
+            </LinearLayout>
+
+            <TableLayout
+                android:id="@+id/boston_north"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+            </TableLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nyc_schedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:text="Upper Valley"/>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:src="@drawable/next"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="15dp"
+                    android:text="New York City"/>
+
+            </LinearLayout>
+
+            <TableLayout
+                android:id="@+id/nyc_south"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </TableLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:text="New York City"/>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:src="@drawable/next"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="15dp"
+                    android:text="Upper Valley"/>
+
+            </LinearLayout>
+
+            <TableLayout
+                android:id="@+id/nyc_north"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </TableLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>

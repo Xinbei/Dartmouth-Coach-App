@@ -50,7 +50,6 @@ public class DiscountFragment extends Fragment{
             }
         });
 
-
         children_discount.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 MyDialogFragment dialog = MyDialogFragment.newInstance(3, "Children's Deals & Discounts",
