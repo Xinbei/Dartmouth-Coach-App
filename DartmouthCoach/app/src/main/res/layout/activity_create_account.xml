@@ -127,19 +127,6 @@
 
 
 
-
-
-        <!-- profile gender -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-        </LinearLayout>
-
-
-
         <!-- End of login input -->
 
 
@@ -147,13 +134,15 @@
             android:id="@+id/btnCreate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginTop="55dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
             android:background="@color/color1"
             android:onClick="onNewAcc"
             android:textAllCaps="false"
+            android:textSize="20dp"
             android:textColor="@color/white"
             android:text="CREATE" />
-
 
     </LinearLayout>
 

@@ -5,7 +5,7 @@
         android:title="User Information">
         <PreferenceScreen
             android:key="personal_information"
-            android:title="User's profile"
+            android:title="User's Profile"
             android:summary="Name, Email, password, etc">
             <intent
                 android:action="android.intent.action.UserProfile"/>
@@ -15,7 +15,7 @@
             android:title="Order History"
             android:summary="View your previous orders">
             <intent
-                android:action="android.intent.action.DisplayOrderHistory"/>
+                android:action="android.intent.action.OrderHistoryActivity"/>
         </PreferenceScreen>
         <PreferenceScreen
             android:key="edit_passengers"
@@ -27,7 +27,7 @@
         android:title="Payment Settings">
         <PreferenceScreen
             android:key="payment_settings"
-            android:title="Credit card"
+            android:title="Credit Card"
             android:summary="Change your credit card information">
             <intent
                 android:action="android.intent.action.EditPaymentInfo"/>
