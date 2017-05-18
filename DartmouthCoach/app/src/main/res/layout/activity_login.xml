@@ -9,23 +9,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="30dp"
-        android:orientation="vertical"
-        android:layout_gravity="center_vertical">
+        android:orientation="vertical">
 
-
-        <!-- Login Title -->
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="Please Login" />
-        </LinearLayout>
-
+            android:textSize="20dp"
+            android:textColor="@color/color1"
+            android:text="Please Login" />
 
 
         <!-- Login Input -->
@@ -127,19 +119,13 @@
             android:layout_marginRight="20dp"
             android:background="@color/color4"/>
 
-
-        <!-- Don't have an account? -->
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="Don't have an account? " />
-        </LinearLayout>
+            android:textSize="15dp"
+            android:textColor="@color/color1"
+            android:text="Don't have an account? " />
 
         <Button
             android:id="@+id/btnNewAcc"
@@ -147,7 +133,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="15dp"
             android:background="@color/white"
             android:onClick="onNewAcc"
             android:textAllCaps="false"
@@ -165,19 +151,6 @@
             android:onClick="onGuest"
             android:textAllCaps="false"
             android:text="Continue as a guest" />
-
-        <com.google.android.gms.common.SignInButton
-            android:id="@+id/btn_google_signin"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="8dp"
-            android:textAllCaps="false"
-            android:layout_centerInParent="true"
-            />
-
-
 
 
     </LinearLayout>

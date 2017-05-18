@@ -56,12 +56,10 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
             return;
         }
 
-        else {
-            // START:Create a new account
-            Intent intent = new Intent(this, LoginActivity.class);
-            intent.putExtra(Global.USER_EMAIL, email);
-            intent.putExtra(Global.USER_NAME, mName.getText().toString());
-            finish();
-        }
+        Toast.makeText(CreateAccountActivity.this,
+                "Your account created!",
+                Toast.LENGTH_SHORT).show();
+
+        finish();
     }
 }

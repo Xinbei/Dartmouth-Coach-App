@@ -13,6 +13,10 @@ public class Global {
     public static final String USER_NAME = "username";
     public static final String USER_EMAIL = "email";
 
+    public static final String LOGIN_METHOD_KEY = "login_method_key";
+    public static final String EMAIL_LOGIN = "email_login";
+    public static final String GUEST_LOGIN = "guest_login";
+
     public static final String[] LOCATION_LIST = {"None", "Hanover","Lebanon",
             "New London","South Station", "Logan Airport", "New York"};
 

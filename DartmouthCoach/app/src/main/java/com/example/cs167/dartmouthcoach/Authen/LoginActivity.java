@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.example.cs167.dartmouthcoach.CreateAccountActivity;
+import com.example.cs167.dartmouthcoach.Global;
 import com.example.cs167.dartmouthcoach.R;
 import com.example.cs167.dartmouthcoach.MainActivity;
 
@@ -13,6 +15,8 @@ import com.example.cs167.dartmouthcoach.MainActivity;
  */
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private String loginMethod;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +27,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         findViewById(R.id.btnForgetPassword).setOnClickListener(this);
         findViewById(R.id.btnNewAcc).setOnClickListener(this);
         findViewById(R.id.btnLogin).setOnClickListener(this);
-        findViewById(R.id.btn_google_signin).setOnClickListener(this);
         findViewById(R.id.btnGuest).setOnClickListener(this);
         // END: set button onclick listener
 
@@ -32,13 +35,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onStart(){
         super.onStart();
-        //addAuthListener to mAuth
     }
 
     @Override
     public void onStop(){
         super.onStop();
-        //removeAuthListener from mAuth
 
     }
 
@@ -47,12 +48,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         switch (v.getId()){
             // START: create_new_account
             case R.id.btnNewAcc:
+                Intent int_newAcc = new Intent(this, CreateAccountActivity.class);
+                startActivity(int_newAcc);
                 break;
             // END: create_new_account
 
             // START: sign_in_with_email_and_password
             case R.id.btnLogin:
                 Intent int_email = new Intent(this,MainActivity.class);
+                loginMethod = Global.EMAIL_LOGIN;
+                int_email.putExtra(Global.LOGIN_METHOD_KEY, loginMethod);
                 startActivity(int_email);
                 finish();
                 break;
@@ -61,16 +66,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             // START:continue_as_guest
             case R.id.btnGuest:
                 Intent int_guest = new Intent(this,MainActivity.class);
+                loginMethod = Global.GUEST_LOGIN;
+                int_guest.putExtra(Global.LOGIN_METHOD_KEY, loginMethod);
                 startActivity(int_guest);
                 finish();
                 break;
             // END:continue_as_guest
-
-            // START:sign_in_with_google_account
-            case R.id.btn_google_signin:
-                // END: sign_in_with_google_account
-
-                // START: SEND PASSWORD RESET EMAIL
             case R.id.btnForgetPassword:
                 break;
             // END: SEND PASSWORD RESET EMAIL
