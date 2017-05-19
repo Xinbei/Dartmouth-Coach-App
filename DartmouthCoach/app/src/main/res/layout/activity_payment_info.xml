@@ -58,7 +58,7 @@
                 android:textColor="@color/darkGray"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="MM/DD"/>
+                android:hint="MM/YY"/>
 
 
         </LinearLayout>

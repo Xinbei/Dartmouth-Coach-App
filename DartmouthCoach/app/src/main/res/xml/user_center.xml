@@ -29,8 +29,6 @@
             android:key="payment_settings"
             android:title="Credit Card"
             android:summary="Change your credit card information">
-            <intent
-                android:action="android.intent.action.EditPaymentInfo"/>
         </PreferenceScreen>
     </com.example.cs167.dartmouthcoach.MyPreferenceCategory>
 

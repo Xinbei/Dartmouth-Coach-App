@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.cs167.dartmouthcoach.LocationAdapter;
 import com.example.cs167.dartmouthcoach.Model.Order;
@@ -214,15 +215,44 @@ public class TicketsFragment extends Fragment{
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), RouteChooseActivity.class);
-                Bundle b = new Bundle();
-                b.putParcelable("order", order);
-                intent.putExtras(b);
-                startActivity(intent);
+                if(validation())
+                    toRouteChoosePage();
             }
         });
 
         return rootView;
+    }
+
+    private void toRouteChoosePage(){
+        Intent intent = new Intent(getActivity(), RouteChooseActivity.class);
+        Bundle b = new Bundle();
+        b.putParcelable("order", order);
+        intent.putExtras(b);
+        startActivity(intent);
+    }
+
+    private boolean validation(){
+        boolean flag = true;
+        Date dt = new Date();
+        mDateAndTime.setTime(dt);
+        mDateAndTime.add(Calendar.DATE, -1);
+        dt = mDateAndTime.getTime();
+        if(order.getDeparture()==0 || order.getDestination()==0){
+            Toast.makeText(getActivity(), "Invalid locations", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        if(order.getDate() == null || order.getDate().before(dt)){
+            Toast.makeText(getActivity(), "Invalid dates", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if(order.isRoundtrip()){
+            if(order.getReturnDate()==null || order.getReturnDate().before(dt)){
+                Toast.makeText(getActivity(), "Invalid dates", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+        return true;
     }
 
 
