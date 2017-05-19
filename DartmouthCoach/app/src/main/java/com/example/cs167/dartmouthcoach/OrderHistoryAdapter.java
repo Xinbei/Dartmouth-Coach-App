@@ -51,7 +51,9 @@ public class OrderHistoryAdapter extends ArrayAdapter<Order> {
             viewHolder = (OrderHistoryAdapter.ViewHolder) convertView.getTag();
         }
 
-        viewHolder.summary.setText(r.getFinalSummary());
+        viewHolder.summary.setText(r.getSummaryForDisplay());
+
+
 
         return convertView;
     }

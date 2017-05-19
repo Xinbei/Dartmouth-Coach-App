@@ -183,6 +183,8 @@ public class Order implements Parcelable {
 
     public String getFinalSummary(){
         String s = "";
+        s += getDeptAndDest();
+        s += "\n";
 
         SimpleDateFormat format = new SimpleDateFormat("EEE MM/dd/yyyy");
         if(date!=null)
@@ -196,6 +198,30 @@ public class Order implements Parcelable {
         s += Global.BOSTON_SERVICE_SOUTHBOUND.get(route).getTimeString();
         if(roundtrip){
             s += " - ";
+            if(returnDate != null)
+                s += Global.BOSTON_SERVICE_NORTHBOUND.get(route).getTimeString();
+        }
+        s += "\n";
+        s += adults + " Adults, "+children + " Children";
+        return s;
+    }
+
+    public String getSummaryForDisplay(){
+        String s = "";
+        s += getDeptAndDest();
+        s += "\n";
+        s += "Departure: ";
+        SimpleDateFormat format = new SimpleDateFormat("EEE MM/dd/yyyy");
+        if(date!=null)
+            s += format.format(date);
+        s += "\n";
+        s += Global.BOSTON_SERVICE_SOUTHBOUND.get(route).getTimeString();
+        if(roundtrip){
+            s += "\n";
+            s += "Return: ";
+            if(returnDate != null)
+                s += format.format(returnDate);
+            s += "\n";
             if(returnDate != null)
                 s += Global.BOSTON_SERVICE_NORTHBOUND.get(route).getTimeString();
         }

@@ -55,7 +55,7 @@ public class RouteChooseActivity extends AppCompatActivity {
                     t.setTextColor(Color.WHITE);
                     t = (TextView)view.findViewById(R.id.ava);
                     t.setTextColor(Color.WHITE);*/
-                order.setRoute(i+1);
+                order.setRoute(i);
                 if(order.isRoundtrip()){
                     adapterView.setVisibility(View.GONE);
                     routeReturn.setAdapter(adapter2);
@@ -70,7 +70,7 @@ public class RouteChooseActivity extends AppCompatActivity {
         routeReturn.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                order.setRoute2(i+1);
+                order.setRoute2(i);
                 toPassengerInfoPage();
             }
         });

@@ -1,9 +1,13 @@
 package com.example.cs167.dartmouthcoach;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.cs167.dartmouthcoach.Model.Order;
@@ -42,5 +46,19 @@ public class OrderHistoryActivity extends AppCompatActivity {
 
         OrderHistoryAdapter adapter = new OrderHistoryAdapter(this,orderList);
         orderListView.setAdapter(adapter);
+        orderListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                showDialog();
+            }
+        });
+    }
+
+    public void showDialog(){
+        Dialog settingsDialog = new Dialog(this);
+        settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        settingsDialog.setContentView(getLayoutInflater().inflate(R.layout.qrcode_dialog
+                , null));
+        settingsDialog.show();
     }
 }
