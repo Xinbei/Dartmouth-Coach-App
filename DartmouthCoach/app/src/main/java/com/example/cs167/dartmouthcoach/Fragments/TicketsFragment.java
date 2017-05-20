@@ -232,7 +232,6 @@ public class TicketsFragment extends Fragment{
     }
 
     private boolean validation(){
-        boolean flag = true;
         Date dt = new Date();
         mDateAndTime.setTime(dt);
         mDateAndTime.add(Calendar.DATE, -1);
@@ -252,6 +251,7 @@ public class TicketsFragment extends Fragment{
                 return false;
             }
         }
+        mDateAndTime.setTime(new Date());
         return true;
     }
 

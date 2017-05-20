@@ -24,6 +24,9 @@ public class PaymentInfoActivity extends AppCompatActivity {
     SharedPreferences.Editor editor;
     private Order order;
     private Button pay;
+    static PaymentInfoActivity instance;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,8 @@ public class PaymentInfoActivity extends AppCompatActivity {
         setTitle("Payment Info");
         Bundle b = getIntent().getExtras();
         order = b.getParcelable("order");
+        instance = this;
+
         if(order!=null){
             Toast.makeText(this,Global.LOCATION_LIST[order.getDeparture()],Toast.LENGTH_SHORT).show();
         }
@@ -71,5 +76,11 @@ public class PaymentInfoActivity extends AppCompatActivity {
         intent.putExtras(b);
         startActivity(intent);
 
+    }
+
+
+
+    public static PaymentInfoActivity getInstance(){
+        return instance;
     }
 }

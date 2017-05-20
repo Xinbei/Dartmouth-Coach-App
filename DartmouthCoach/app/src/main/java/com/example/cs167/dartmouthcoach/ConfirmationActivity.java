@@ -15,6 +15,7 @@ public class ConfirmationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmation);
         setTitle("Payment Confirmation");
+        closeOtherActivities();
 
         viewOrder = (Button) findViewById(R.id.view_order);
         viewOrder.setOnClickListener(new View.OnClickListener() {
@@ -30,5 +31,12 @@ public class ConfirmationActivity extends AppCompatActivity {
         Intent intent = new Intent(this, OrderHistoryActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    public void closeOtherActivities(){
+        RouteChooseActivity.getInstance().finish();
+        PassengerInfoActivity.getInstance().finish();
+        OrderSummaryActivity.getInstance().finish();
+        PaymentInfoActivity.getInstance().finish();
     }
 }

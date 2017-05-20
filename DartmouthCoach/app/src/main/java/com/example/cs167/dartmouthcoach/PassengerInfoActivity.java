@@ -28,10 +28,12 @@ public class PassengerInfoActivity extends AppCompatActivity {
     Spinner bags;
     Button next;
     TextView summary;
+    static PassengerInfoActivity instance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        instance = this;
         setContentView(R.layout.activity_passenger_info);
         setTitle("Passengers Info");
         Bundle b = getIntent().getExtras();
@@ -125,5 +127,9 @@ public class PassengerInfoActivity extends AppCompatActivity {
         b.putParcelable("order", order);
         intent.putExtras(b);
         startActivity(intent);
+    }
+
+    public static PassengerInfoActivity getInstance(){
+        return instance;
     }
 }

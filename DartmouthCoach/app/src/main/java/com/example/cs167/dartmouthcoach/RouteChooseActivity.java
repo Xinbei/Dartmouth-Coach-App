@@ -21,12 +21,14 @@ public class RouteChooseActivity extends AppCompatActivity {
     private TextView summary;
     private ListView routeLeave;
     private ListView routeReturn;
+    static RouteChooseActivity instance;
 
     private int route1 = -1, route2 = -1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_route_choose);
+        instance = this;
 
         Bundle b = getIntent().getExtras();
         order = b.getParcelable("order");
@@ -83,5 +85,9 @@ public class RouteChooseActivity extends AppCompatActivity {
         b.putParcelable("order", order);
         intent.putExtras(b);
         startActivity(intent);
+    }
+
+    public static RouteChooseActivity getInstance(){
+        return instance;
     }
 }

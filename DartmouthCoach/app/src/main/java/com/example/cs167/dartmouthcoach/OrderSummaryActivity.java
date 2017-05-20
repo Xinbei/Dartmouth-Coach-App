@@ -19,11 +19,14 @@ public class OrderSummaryActivity extends AppCompatActivity {
     private TextView summary;
     private int bagPrice;
     private Button next;
+    static OrderSummaryActivity instance;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_summary);
         setTitle("Ticket Details");
+        instance = this;
         Bundle b = getIntent().getExtras();
         order = b.getParcelable("order");
 
@@ -84,5 +87,9 @@ public class OrderSummaryActivity extends AppCompatActivity {
         b.putParcelable("order", order);
         intent.putExtras(b);
         startActivity(intent);
+    }
+
+    public static OrderSummaryActivity getInstance(){
+        return instance;
     }
 }
